@@ -29,19 +29,19 @@ Khonsa is designed to be modified to suit the preferences of the developer. Belo
 of the framework.
 
 ````
--app --- Folder containing all user defined files for and individual project
+/app --- Folder containing all user defined files for and individual project
 
-    -Controllers --- Folder with user defined controllers
+    /Controllers --- Folder with user defined controllers
     
-    -Models --- folder containing user defined models
+    /Models --- folder containing user defined models
     
-    -Views --- folder containing user defined views(html) files
+    /Views --- folder containing user defined views(html) files
     
     -routes.py --- file with endpoints that the server is expected facilitate
     
--core -- Folder containing the base/core functionality of the framework
+/core -- Folder containing the base/core functionality of the framework
 
-    -application --- folder containing essential base classes in khonsa
+    /application --- folder containing essential base classes in khonsa
     
         -controller.php --- Base Controller class (user defined controllers extends this class)
         
@@ -55,17 +55,17 @@ of the framework.
         
         -view.php --- Provides options to parse user defined view files
         
-    -config --- folder containing configuration settings for Khonsa
+    /config --- folder containing configuration settings for Khonsa
     
         -config.php --- general configuration settings for the application
         
         -database.php --- database configuration settings for the application
         
-    -default --- folder containing default views/files that are used if the user hasn't defined any
+    /default --- folder containing default views/files that are used if the user hasn't defined any
     
     -khonsa.php --- base of application that determines what actions should be taken when a request is received.
     
--public --- publicly accessible folder of the application.
+/public --- publicly accessible folder of the application.
 ```
 ### Changing default layout
 
@@ -85,7 +85,7 @@ Additionally, a parameters attribute may be added that is used to accurately ide
 The value of the parameter is expected to be a regular expression string that will be matched against incoming requests. If 
 a parameter is contained within a route and no parameters attribute is defined, any request made to that route will be allowed.
 
-The '*' route is used to capture all other routes. Unlike the definition for valid routes, the only attribute that is expected
+The `*` route is used to capture all other routes. Unlike the definition for valid routes, the only attribute that is expected
 for this endpoint is a string with the name of the view to return when this route is triggered. If this is not defined a default
 404 page is returned to the client. 
 
@@ -126,7 +126,7 @@ return $routes;
 ````
 ______
 
-## Controllers
+## Controllers (Khonsa\Application\Controller)
 
 The base controller defined in the core of the application provides the following functions
 to aid in imporoving development speed. It is expected that all user defined controllers will
@@ -145,7 +145,7 @@ Currently, the following functions are available to all children of the controll
 ```
 ______
 
-## Models
+## Models (Khonsa\Application\Model)
 
 Models are classes created that are designed to imitate the table of a database. All user defined models
 are expected to subclass the base Model class. If this is not done, then a connection to the database will
@@ -156,13 +156,13 @@ NOTE: The name of the class and the file containing the class should be the same
 autoloading of all required models throughout the application.
 
 ______
-## Views
+## Views (Khonsa\Application\View)
 
 Views are the files that are to be rendered to a client when a makes a request to the application. To facilitate
 variable dynamic content for a view, the following format can be followed when creating a view. When the view
 is being rendered, via a response method the placeholder text is replaced by the supplied information.
 
-```%{{ variable_name }}%```
+```%{{ variable_name }}%``` - this is the format expected to when parsing variables into a view.
 
 _____
 ## Requests
@@ -181,6 +181,7 @@ an array can also be passed containing data should be placed within the view (pl
 
 To render a view named Home with that have `firstname` and `lastname` placeholders you would do the first.
 If you just wish to return the data as json, then second method would be used.
+
 ```php 
 $name = ['firstname' => 'John', 'lastname' => 'Doe'];
 
@@ -188,14 +189,17 @@ Response::view('Home', $name); // render Home view with firtname and lastname
 Response::json($name); // return response as json
 ```
 
-Additionally, if you just wish to redirect the client to another route the following can be done:
-```php Response::redirect('/home', $status_code=202)```
+Additionally, if you just wish to redirect the client to another route the following can be done. THe status
+code parameter can be omitted. 
+```php 
+Response::redirect('/home', $status_code=202)
+```
 
 _____
 ## Database Support
 
 Currently, Khonsa is only able to connect to MySQL database servers. The settings relating to the connection
-can be found in `core/config/database.php'.
+can be found in `core/config/database.php` file.
 
 ______
 
@@ -209,6 +213,6 @@ format.
 ______
 
 ## Things to Come
-- [] Support for Composer
-- [] Other DBMS systems (MSSQL, PSQL, SQLITE, MONGO)
-- [] Nested/Sub Views
+- Support for Composer
+- Other DBMS systems (MSSQL, PSQL, SQLITE, MONGO)
+- Nested/Sub Views
