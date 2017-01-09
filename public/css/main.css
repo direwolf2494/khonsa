@@ -1,0 +1,28 @@
+/*@import "compass/css3";*/
+
+.table-editable {
+    position: relative;
+}
+
+.fa {
+    font-size: 20px;
+}
+
+.table-remove {
+    color: #700;
+    cursor: pointer;
+}
+
+.table-remove:hover {
+    color: #f00;
+}
+
+.table-update {
+    color: #070;
+    cursor: pointer;
+}
+
+    
+.table-update:hover {
+        color: #0f0;
+}

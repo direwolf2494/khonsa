@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>User Submitted Notes</title>
+        
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        
+        <script type="text/javascript" src="js/jquery.js"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Messages Submitted on Home Page</h1>
+            <p>
+                The following table contains a listing of all the messages that have been submitted
+                by clients interested in utilizing the services of Monkey digital.
+            </p>
+            
+            <div id="table" class="table-editable">
+                <table class="table">
+                    <tr>
+                        <th hidden></th>
+                        <th>Name</th>
+                        <th>Company</th>
+                        <th>Message</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                    <tr class="hide">
+                        <td hidden><input id="id" type="text" name="id" disabled required/></td>
+                        <td><input id="name" type="text" name="name" class="form-control" required/></td>
+                        <td><input id="company" type="text" name="company" class="form-control" required/></td>
+                        <td><textarea id="message" name="message" class="form-control" required></textarea></td>
+                        <td><span class="table-remove fa fa-remove"></span></td>
+                        <td><span class="table-update fa fa-send"></span></td>
+                    </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
