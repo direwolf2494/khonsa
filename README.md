@@ -29,6 +29,7 @@ and run applications using khonsa.
 4. Wait while the application and it's required resources are installed.
 5. Go to `http://localhost:8080` to the see the live application.
 6. Enjoy.
+
 ________
 
 ## Project Layout
