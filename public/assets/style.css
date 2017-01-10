@@ -1,5 +1,9 @@
 body {	color:#666;	font:300 15px/15px Roboto,Arial,Helvetica;background-color:#fff;-webkit-font-smoothing:antialiased;background-color: #eee;}
 
+a.btn:link,a.btn:visited,a.btn:hover,a.btn:active {
+    text-decoration: none;
+}
+
 a{color:#CA2D8E; text-decoration:none;}
 a:hover{color:#666;}
 .btn,a,.btn:hover,a:hover {

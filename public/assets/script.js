@@ -6,7 +6,7 @@
     $(".scroll li").removeClass('active');
     $(this).parents('li').toggleClass('active');
     });
-    });
+});
 
 
 

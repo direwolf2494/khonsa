@@ -10,6 +10,7 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "-05:00";
 
+DROP DATABASE IF EXISTS `khonsa`;
 --
 -- Database: `khonsa`
 --
@@ -27,7 +28,7 @@ CREATE TABLE `notes` (
   `name` varchar(64) COLLATE utf8mb4_unicode_ci NOT NULL,
   `company` varchar(256) COLLATE utf8mb4_unicode_ci NOT NULL,
   `message` varchar(1024) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `created_at` timestamp NOT NULL DEFAULT 0 NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 

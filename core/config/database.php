@@ -20,7 +20,7 @@ define(DB_TYPE, 'mysql');
 
 define(DB_SERVER_NAME, 'localhost');
 
-define(DB_USERNAME, 'khonsa');
+define(DB_USERNAME, 'root');
 
 define(DB_PASSWORD, 'khonsa');
 
