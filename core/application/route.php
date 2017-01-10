@@ -170,7 +170,10 @@ class Route
             // adds leading slash and removes trailing slash if necessary
             $k = ($key[0] != '/') ? ('/' . $key) : $key;
             $key_length = strlen($k) - 1;
-            $k = ($k[$key_length] == '/') ? substr($k, 0, $key_length) : $k;
+
+            if ($key_length !== 0) // in case it's '/'
+                $k = ($k[$key_length] == '/') ? substr($k, 0, $key_length) : $k;
+                
             // convert all keys to uppercase
             $v = array_change_key_case($value, CASE_UPPER);
             $temp[$k] = $v;
