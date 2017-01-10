@@ -18,7 +18,7 @@
 
 define(DB_TYPE, 'mysql');
 
-define(DB_SERVER_NAME, 'db4free.net');
+define(DB_SERVER_NAME, 'localhost');
 
 define(DB_USERNAME, 'khonsa');
 

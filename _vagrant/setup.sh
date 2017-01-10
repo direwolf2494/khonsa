@@ -55,5 +55,8 @@ sudo apt-get -y install git
 # git clone khonsa
 sudo git clone https://github.com/direwolf2494/khonsa.git "/var/www/html/${PROJECTFOLDER}"
 
+# generate example database and tables
+sudo mysql -h "localhost" -u "root" "-p${PASSWORD}" < "/var/www/html/_install/generate_notes_database.sql"
+
 # Installation was successful
 echo "Khonsa has been installed successfully!"

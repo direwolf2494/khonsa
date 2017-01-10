@@ -1,15 +1,14 @@
-
- .----------------.  .----------------.  .----------------.  .-----------------. .----------------.  .----------------. 
-| .--------------. || .--------------. || .--------------. || .--------------. || .--------------. || .--------------. |
-| |  ___  ____   | || |  ____  ____  | || |     ____     | || | ____  _____  | || |    _______   | || |      __      | |
-| | |_  ||_  _|  | || | |_   ||   _| | || |   .'    `.   | || ||_   \|_   _| | || |   /  ___  |  | || |     /  \     | |
-| |   | |_/ /    | || |   | |__| |   | || |  /  .--.  \  | || |  |   \ | |   | || |  |  (__ \_|  | || |    / /\ \    | |
-| |   |  __'.    | || |   |  __  |   | || |  | |    | |  | || |  | |\ \| |   | || |   '.___`-.   | || |   / ____ \   | |
-| |  _| |  \ \_  | || |  _| |  | |_  | || |  \  `--'  /  | || | _| |_\   |_  | || |  |`\____) |  | || | _/ /    \ \_ | |
-| | |____||____| | || | |____||____| | || |   `.____.'   | || ||_____|\____| | || |  |_______.'  | || ||____|  |____|| |
-| |              | || |              | || |              | || |              | || |              | || |              | |
-| '--------------' || '--------------' || '--------------' || '--------------' || '--------------' || '--------------' |
- '----------------'  '----------------'  '----------------'  '----------------'  '----------------'  '----------------' 
+      ___           ___           ___           ___           ___           ___     
+     /\__\         /\__\         /\  \         /\__\         /\  \         /\  \    
+    /:/  /        /:/  /        /::\  \       /::|  |       /::\  \       /::\  \   
+   /:/__/        /:/__/        /:/\:\  \     /:|:|  |      /:/\ \  \     /:/\:\  \  
+  /::\__\____   /::\  \ ___   /:/  \:\  \   /:/|:|  |__   _\:\~\ \  \   /::\~\:\  \ 
+ /:/\:::::\__\ /:/\:\  /\__\ /:/__/ \:\__\ /:/ |:| /\__\ /\ \:\ \ \__\ /:/\:\ \:\__\
+ \/_|:|~~|~    \/__\:\/:/  / \:\  \ /:/  / \/__|:|/:/  / \:\ \:\ \/__/ \/__\:\/:/  /
+    |:|  |          \::/  /   \:\  /:/  /      |:/:/  /   \:\ \:\__\        \::/  / 
+    |:|  |          /:/  /     \:\/:/  /       |::/  /     \:\/:/  /        /:/  /  
+    |:|  |         /:/  /       \::/  /        /:/  /       \::/  /        /:/  /   
+     \|__|         \/__/         \/__/         \/__/         \/__/         \/__/    
 
 
 Khonsa is a MVC/OOP framework developed in PHP. Khonsa is based
@@ -19,9 +18,16 @@ websites or Rest based JSON APIs to integrate with most frontend applications.
 Note: This framework is still in the development phase and will have security flaws. It is recommended that
 Khonsa only be used to create small web applications where security and efficiency are not of utmost concern.
 
-## Setting Up Khonsa
+## Setting Up Khonsa (Vagrant)
+Khonsa was developed within a vagrant environment. The following steps provide information on how to configure
+and run applications using khonsa.
 
-TODO: add this when booted in ubuntu
+1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
+2. Copy the Vagrantfile and the setup script into the follow you'll be using as the base of your application.
+3. Run `vagrant up`
+4. Wait while the application and it's required resources are installed.
+5. Go to `http://localhost:8080` to the see the live application.
+6. Enjoy.
 ________
 
 ## Project Layout
@@ -89,7 +95,7 @@ The `*` route is used to capture all other routes. Unlike the definition for val
 for this endpoint is a string with the name of the view to return when this route is triggered. If this is not defined a default
 404 page is returned to the client. 
 
-````php
+```php
 $routes =  [
     "/" => [
         'GET' => [
@@ -123,7 +129,7 @@ $routes =  [
 ];
     
 return $routes;
-````
+```
 ______
 
 ## Controllers (Khonsa\Application\Controller)
