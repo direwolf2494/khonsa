@@ -3,3 +3,8 @@
 php_errors.log
 php.ini
 .vagrant/
+_vagrant/
+
+!_vagrant/setup.sh
+!_vagrant/Vagrantfile
+!_vagrant/_install/

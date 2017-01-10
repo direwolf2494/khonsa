@@ -169,7 +169,8 @@ class Route
             
             // adds leading slash and removes trailing slash if necessary
             $k = ($key[0] != '/') ? ('/' . $key) : $key;
-            $k = ($k[-1] == '/') ? substr($k, 0, (strlen($k) - 1)) : $k;
+            $key_length = strlen($k) - 1;
+            $k = ($k[$key_length] == '/') ? substr($k, 0, $key_length) : $k;
             // convert all keys to uppercase
             $v = array_change_key_case($value, CASE_UPPER);
             $temp[$k] = $v;
@@ -214,7 +215,7 @@ class Route
         foreach($routes as $method => $route)
         {
             // generate regular expression for this endpoint
-            $parameters = is_null($route["parameters"]) ? [] : $route["parameters"];
+            $parameters = isset($route["parameters"]) ? $route["parameters"] : [];
             $regex_route = self::replace_variables($endpoint, $parameters);
             
             // check if route already exists first

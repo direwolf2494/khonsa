@@ -24,7 +24,7 @@ Khonsa was developed within a vagrant environment. The following steps provide i
 and run applications using khonsa.
 
 1. Install [VirtualBox](https://www.virtualbox.org/wiki/Downloads) and [Vagrant](https://www.vagrantup.com/downloads.html)
-2. Copy the Vagrantfile and the setup script into the follow you'll be using as the base of your application.
+2. Copy the the contents of the `_vagrant` folder to your preferred application folder (empty folder recommended).
 3. Run `vagrant up`
 4. Wait while the application and it's required resources are installed.
 5. Go to `http://localhost:8080` to the see the live application.

@@ -28,8 +28,8 @@ class Khonsa
     {
         Route::load();
         // get incoming requested route
-        $route = $this->parse_uri($_SERVER[REQUEST_URI]);
-        $method = $_SERVER[REQUEST_METHOD];
+        $route = $this->parse_uri($_SERVER['REQUEST_URI']);
+        $method = $_SERVER['REQUEST_METHOD'];
         // generate the request object
         $request = $this->generate_request();
 
@@ -62,7 +62,7 @@ class Khonsa
         $parameters = null;
         $headers = getallheaders();
         
-        switch($_SERVER[REQUEST_METHOD])
+        switch($_SERVER['REQUEST_METHOD'])
         {
             case 'GET':
                 $parameters = $_GET;
