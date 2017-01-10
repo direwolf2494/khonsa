@@ -82,6 +82,8 @@ class Khonsa
     private function parse_uri($uri)
     {
         $parts = explode("?", $uri);
+        $parts = ($parts === '') ? ['/'] : $parts;
+        
         return $parts[0];
     }
 }
